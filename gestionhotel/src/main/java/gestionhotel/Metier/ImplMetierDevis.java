@@ -2,7 +2,9 @@ package gestionhotel.Metier;
 
 
 import gestionhotel.DAO.InterfDevisDao;
+import gestionhotel.entities.Chambre;
 import gestionhotel.entities.Devis;
+import gestionhotel.entities.Produit;
 
 import java.util.List;
 
@@ -62,6 +64,18 @@ public class ImplMetierDevis implements InterMetierDevis{
 	public List<Devis> selectDevis() {
 		return daoDevis.selectDevis();
 	
+	}
+	@Override
+	public double prixDevis(Long idDevis) {
+		Devis d=daoDevis.getDevis(idDevis);
+		double prix=0;
+		for (Produit p : d.getListeProduit()) {
+			prix= prix + p.getPrixProduit();
+		}
+		for (Chambre c : d.getReservation().getListechambre()) {
+			prix= prix + c.getPrix();
+		}
+		return prix;
 	}
 
 }

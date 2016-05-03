@@ -28,4 +28,8 @@ public interface InterMetierDevis {
     
     /** selectDevis selectionne la liste des devis de la base de donnee en fonction de l'id devis**/
     public List<Devis> selectDevis(); 
+    
+    /** fonction qui calcul le prix du devis ensemble des produits et reservation **/
+    public double prixDevis(Long idDevis);
+    
 }

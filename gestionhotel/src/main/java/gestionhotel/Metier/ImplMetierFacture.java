@@ -1,5 +1,6 @@
 package gestionhotel.Metier;
 
+
 import gestionhotel.DAO.InterfFactureDao;
 import gestionhotel.entities.Facture;
 
@@ -21,7 +22,7 @@ public class ImplMetierFacture implements InterMetierFacture{
 	private InterfFactureDao daoFacture;
 	
 	//setters  
-	public void setDaoGFacture(InterfFactureDao daoFacture) {
+	public void setDaoFacture(InterfFactureDao daoFacture) {
 		this.daoFacture = daoFacture;
 		LOG.info("dao facture injected");
 	}

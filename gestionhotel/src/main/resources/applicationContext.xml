@@ -15,6 +15,26 @@
 	<bean id="metierEmploye" class="gestionhotel.Metier.ImplemEmployeMetier">
 		<property name="daoEmploye" ref="daoEmploye"></property>
 	</bean> 
+	<bean id="daochambre" class="gestionhotel.DAO.ImplChambreDao"></bean>
+	<bean id="metierChambre" class="gestionhotel.Metier.ImplChambreMetier">
+		<property name="daochambre" ref="daochambre"></property>
+	</bean>
+	<bean id="daoresarvation" class="gestionhotel.DAO.ImplReservationDao"></bean>
+	<bean id="metierReservation" class="gestionhotel.Metier.ImplReservationMetier">
+		<property name="daoreservation" ref="daoreservation"></property>
+	</bean>
+	<bean id="daoDevis" class="gestionhotel.DAO.ImplDevisDao"></bean>
+	<bean id="metierDevis" class="gestionhotel.Metier.ImplMetierDevis">
+		<property name="daoDevis" ref="daoDevis"></property>
+	</bean>
+	<bean id="daoProduit" class="gestionhotel.DAO.ImplProduitsDao"></bean>
+	<bean id="metierProduit" class="gestionhotel.Metier.ImplMetierProduit">
+		<property name="daoProduit" ref="daoProduit"></property>
+	</bean>
+	<bean id="daoFacture" class="gestionhotel.DAO.ImplFactureDao"></bean>
+	<bean id="metierFacture" class="gestionhotel.Metier.ImplMetierFacture">
+		<property name="daoFacture" ref="daoFacture"></property>
+	</bean>
 	
 	
     <bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
