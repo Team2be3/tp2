@@ -44,8 +44,8 @@ public class Employe extends Personne implements Serializable{
 	}
 
 	public Employe(String nomPersonne, String prenomPersonne, String sexe,
-			Date nateNaissance, String adresse, String tel, String mail) {
-		super(nomPersonne, prenomPersonne, sexe, nateNaissance, adresse, tel, mail);
+			Date dateNaissance, String adresse, String tel, String mail) {
+		super(nomPersonne, prenomPersonne, sexe, dateNaissance, adresse, tel, mail);
 		// TODO Auto-generated constructor stub
 	}
 	

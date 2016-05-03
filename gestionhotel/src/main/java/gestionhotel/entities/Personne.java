@@ -45,7 +45,7 @@ public class Personne implements Serializable{
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	@NotEmpty
-	private Date nateNaissance;
+	private Date dateNaissance;
 	@NotEmpty
 	private String adresse;
 	@NotEmpty
@@ -79,11 +79,11 @@ public class Personne implements Serializable{
 	public void setSexe(String sexe) {
 		this.sexe = sexe;
 	}
-	public Date getNateNaissance() {
-		return nateNaissance;
+	public Date getDateNaissance() {
+		return dateNaissance;
 	}
-	public void setNateNaissance(Date nateNaissance) {
-		this.nateNaissance = nateNaissance;
+	public void setDateNaissance(Date dateNaissance) {
+		this.dateNaissance = dateNaissance;
 	}
 	public String getAdresse() {
 		return adresse;
@@ -107,12 +107,12 @@ public class Personne implements Serializable{
 	
 	/* constructors */
 	public Personne(String nomPersonne, String prenomPersonne, String sexe,
-			Date nateNaissance, String adresse, String tel, String mail) {
+			Date dateNaissance, String adresse, String tel, String mail) {
 		super();
 		this.nomPersonne = nomPersonne;
 		this.prenomPersonne = prenomPersonne;
 		this.sexe = sexe;
-		this.nateNaissance = nateNaissance;
+		this.dateNaissance = dateNaissance;
 		this.adresse = adresse;
 		this.tel = tel;
 		this.mail = mail;
