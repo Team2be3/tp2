@@ -3,6 +3,7 @@ package gestionhotel.DAO;
 import java.util.List;
 
 import gestionhotel.entities.Chambre;
+import gestionhotel.entities.Reservation;
 
 public interface InterChambreDao {
 	
@@ -11,5 +12,6 @@ public interface InterChambreDao {
 	public void updatechambre(Chambre c);
 	public Chambre getChambre(Long idChambre);
 	public List<Chambre> getlistechambres();
+	public List<Reservation> getlistereservchambre(Long idChambre);
 
 }
