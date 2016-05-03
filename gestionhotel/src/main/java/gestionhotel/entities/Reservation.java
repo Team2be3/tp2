@@ -25,7 +25,7 @@ import javax.persistence.TemporalType;
  *Class:Reservation
  *version:1
  *association: Employé (ManyToOne), Client (ManyToOne), Chambre (ManyToMany)
- * 
+ * hi
  * */
 
 

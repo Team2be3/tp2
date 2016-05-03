@@ -7,7 +7,7 @@ package gestionhotel.entities;
  *Class:Employe
  *version:1.
  *association:List<Reservation>
- *mere:personne
+ *mere:personne cc
  * */
 
 import java.io.Serializable;

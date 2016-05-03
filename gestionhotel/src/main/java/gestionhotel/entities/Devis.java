@@ -26,6 +26,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
  *Sprint:1
  *Ref-UserStory:4
  *Association(s): Produits, Reservation, Facture
+ **cc
  * */
 
 @Entity

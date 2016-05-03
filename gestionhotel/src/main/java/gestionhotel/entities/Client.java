@@ -8,6 +8,7 @@ package gestionhotel.entities;
  *version:1.
  *association:List<Reservation>
  *mere:personne
+ **cc
  * */
 
 import java.io.Serializable;
