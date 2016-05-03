@@ -29,7 +29,6 @@ public class Chambre implements Serializable{
 	
 	//attributs
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idChambre;
 	@Column
 	private Integer capacite;
@@ -70,11 +69,19 @@ public class Chambre implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public List<Reservation> getListereservation() {
+		return listereservation;
+	}
+	public void setListereservation(List<Reservation> listereservation) {
+		this.listereservation = listereservation;
+	}
 	
 	//constructeurs
 	
-	public Chambre(Integer capacite, Double prix, String description) {
+
+	public Chambre(Long idChambre,Integer capacite, Double prix, String description) {
 		super();
+		this.idChambre= idChambre;
 		this.capacite = capacite;
 		this.prix = prix;
 		this.description = description;

@@ -11,6 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -44,10 +45,17 @@ public class Reservation implements Serializable {
 	private String etatReservation;
 	
 	
-	//association avec Chambre
+	//association 
 	@ManyToMany(fetch=FetchType.LAZY, mappedBy="listereservation")
 	private List<Chambre> listechambre=new ArrayList<Chambre>();
-
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="id_client")
+	private Client client;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="id_employe")
+	private Employe employe;
 	
 	//getters and setters
 	
@@ -77,14 +85,35 @@ public class Reservation implements Serializable {
 	}
 
 	
-	//constructeurs
+	public List<Chambre> getListechambre() {
+		return listechambre;
+	}
+	public void setListechambre(List<Chambre> listechambre) {
+		this.listechambre = listechambre;
+	}
+	public Client getClient() {
+		return client;
+	}
+	public void setClient(Client client) {
+		this.client = client;
+	}
+	public Employe getEmploye() {
+		return employe;
+	}
+	public void setEmploye(Employe employe) {
+		this.employe = employe;
+	}
 	
+	//constructeurs
+
 	public Reservation(Date dateDebut, Date dateFin, String etatReservation) {
 		super();
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 		this.etatReservation = etatReservation;
 	}
+
+	
 		
 	public Reservation() {
 		// TODO Auto-generated constructor stub
