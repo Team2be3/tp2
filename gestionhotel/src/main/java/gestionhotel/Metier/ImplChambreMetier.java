@@ -1,4 +1,4 @@
-package gestionhotel.Metier;
+package gestionhotel.Metier; 
 
 import gestionhotel.DAO.InterChambreDao;
 import gestionhotel.entities.Chambre;
@@ -31,6 +31,7 @@ public class ImplChambreMetier implements InterChambreMetier{
 	@Override
 	public void addchambre(Chambre c) {
 		// TODO Auto-generated method stub
+		daochambre.addchambre(c);
 		
 	}
 
@@ -39,31 +40,33 @@ public class ImplChambreMetier implements InterChambreMetier{
 	@Override
 	public void deletechambre(Long idChambre) {
 		// TODO Auto-generated method stub
+		daochambre.deletechambre(idChambre);
 		
 	}
 
 	@Override
 	public void updatechambre(Chambre c) {
 		// TODO Auto-generated method stub
+		daochambre.updatechambre(c);
 		
 	}
 
 	@Override
 	public Chambre getChambre(Long idChambre) {
 		// TODO Auto-generated method stub
-		return null;
+		return daochambre.getChambre(idChambre);
 	}
 
 	@Override
 	public List<Chambre> getlistechambres() {
 		// TODO Auto-generated method stub
-		return null;
+		return daochambre.getlistechambres();
 	}
 
 	@Override
 	public List<Reservation> getlistereservchambre(Long idChambre) {
 		// TODO Auto-generated method stub
-		return null;
+		return daochambre.getlistereservchambre(idChambre);
 	}
 
 }
