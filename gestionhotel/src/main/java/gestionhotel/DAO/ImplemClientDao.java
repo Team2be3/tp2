@@ -46,14 +46,16 @@ public class ImplemClientDao implements InterClientDao {
 
 	@Override
 	public List<Client> getListClient() {
-		Query req= (Query) em.createQuery("from Client");
+		Query req= (Query) em.createQuery("from Personne p where p.class = :y");
+		req.setParameter("y", "Client");
 		return req.getResultList();
 	}
 
 	@Override
 	public List<Client> getListCliMc(String mc) {
-		Query req= (Query) em.createQuery("from Client c where c.nomPersonne = :x");
+		Query req= (Query) em.createQuery("from Personne p where p.nomPersonne like :x and p.class = :y");
 		req.setParameter("x", "%"+mc+"%");
+		req.setParameter("y", "Client");
 		return req.getResultList();
 	}
 

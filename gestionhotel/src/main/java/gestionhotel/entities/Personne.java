@@ -45,7 +45,6 @@ public class Personne implements Serializable{
 	private String sexe;
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	@NotEmpty
 	private Date dateNaissance;
 	@NotEmpty
 	private String adresse;

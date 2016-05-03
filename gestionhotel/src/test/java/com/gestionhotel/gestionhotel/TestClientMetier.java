@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.constraints.AssertTrue;
+
 import gestionhotel.Metier.InterClientMetier;
 import gestionhotel.entities.Client;
 
@@ -48,9 +50,9 @@ public class TestClientMetier {
 	@Test
 	public void testUpdateClient() {
 		Client c=metierClient.getClient(1L);
-		c.setNomPersonne("nom modifier");
+		c.setNomPersonne("dubuc2");
 		metierClient.updateClient(c);
-		assertTrue(c.getNomPersonne().equals("nom modifier"));
+		assertTrue(c.getNomPersonne().equals("dubuc2"));
 	}
 
 	@Test
@@ -60,12 +62,14 @@ public class TestClientMetier {
 
 	@Test
 	public void testGetListClient() {
-		fail("Not yet implemented");
+		List<Client> tab=metierClient.getListClient();
+		assertTrue(tab.size()>0);
 	}
 
 	@Test
 	public void testGetListCliMc() {
-		fail("Not yet implemented");
+		List<Client> tab=metierClient.getListCliMc("du");
+		assertTrue(tab.size()>0);
 	}
 
 }
