@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+
 /*Auteur(s):Shéhérazade
  *Nom projet:GestionHotel
  *Date:02/05/2016

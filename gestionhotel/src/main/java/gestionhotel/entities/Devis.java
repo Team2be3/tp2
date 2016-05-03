@@ -26,6 +26,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
  *Ref-UserStory:4
  *Association(s): Produits, Reservation, Facture
  * */
+
 @Entity
 public class Devis implements Serializable {
 	///////////////////

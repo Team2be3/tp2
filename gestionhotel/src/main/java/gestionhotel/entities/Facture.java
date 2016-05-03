@@ -12,6 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+
 /*Auteur(s):Shéhérazade
  *Nom projet:GestionHotel
  *Date:02/05/2016
