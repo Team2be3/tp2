@@ -24,6 +24,7 @@ import javax.persistence.Transient;
  *Sprint:1
  *Ref-UserStory:4
  *Association(s): Devis
+ **
  * */
 
 @Entity

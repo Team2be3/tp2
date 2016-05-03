@@ -20,7 +20,7 @@ import javax.persistence.ManyToMany;
  *Class:Reservation
  *version:1
  *association: Reservation (ManyToMany)
- * 
+ * cc
  * */
 
 @Entity
@@ -29,7 +29,6 @@ public class Chambre implements Serializable{
 	
 	//attributs
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idChambre;
 	@Column
 	private Integer capacite;
@@ -80,8 +79,9 @@ public class Chambre implements Serializable{
 	//constructeurs
 	
 
-	public Chambre(Integer capacite, Double prix, String description) {
+	public Chambre(Long idChambre,Integer capacite, Double prix, String description) {
 		super();
+		this.idChambre= idChambre;
 		this.capacite = capacite;
 		this.prix = prix;
 		this.description = description;

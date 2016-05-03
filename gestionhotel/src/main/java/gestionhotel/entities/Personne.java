@@ -31,7 +31,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 @DiscriminatorColumn(name="TypePersonne",discriminatorType=DiscriminatorType.STRING)
 public class Personne implements Serializable{
 	
-	/* attributes */
+	/* attributes   */
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idPersonne;

@@ -21,6 +21,7 @@ import javax.persistence.Id;
  *Sprint:1
  *Ref-UserStory:4
  *Association(s): Devis
+ **cc
  * */
 
 @Entity
