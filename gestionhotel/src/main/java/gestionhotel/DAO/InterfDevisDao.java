@@ -3,7 +3,6 @@ package gestionhotel.DAO;
 import java.util.List;
 
 import gestionhotel.entities.Devis;
-import gestionhotel.entities.Produit;
 
 public interface InterfDevisDao {
 
