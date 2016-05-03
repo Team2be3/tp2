@@ -1,6 +1,6 @@
 package gestionhotel.DAO;
 
-/*Auteur(s):Shéhérazade
+/*Auteur(s):Shéhérazade 
  *Nom projet:GestionHotel
  *Date:02/05/2016
  *Package:gestionhotel.DAO

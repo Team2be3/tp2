@@ -13,7 +13,7 @@ public class ImplemEmployeMetier implements InterEmployeMetier {
 	private InterEmployeDao daoEmploye;
 	
 	
-	//setters  
+	//setters
 	public void setDaoEmploye(InterEmployeDao daoEmploye) {
 		this.daoEmploye = daoEmploye;
 		LOG.info("dao employe injected");

@@ -4,7 +4,6 @@ import gestionhotel.entities.Employe;
 
 import java.util.List;
 
-
 public interface InterEmployeMetier {
 
 	public void addEmploye(Employe e);

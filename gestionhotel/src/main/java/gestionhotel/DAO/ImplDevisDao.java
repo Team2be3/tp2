@@ -10,7 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-/*Auteur(s):Shéhérazade
+/*Auteur(s):Shéhérazade 
  *Nom projet:GestionHotel
  *Date:02/05/2016
  *Package:gestionhotel.DAO
