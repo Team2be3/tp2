@@ -7,7 +7,9 @@ import gestionhotel.entities.Reservation;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public class ImplChambreMetier implements InterChambreMetier{
 	
 	private final Logger LOG=Logger.getLogger("ImplemChambreMetier");
@@ -16,17 +18,12 @@ public class ImplChambreMetier implements InterChambreMetier{
 	
 	//setters
 	
-	public InterChambreDao getDaochambre() {
-		return daochambre;
-	}
 
 	public void setDaochambre(InterChambreDao daochambre) {
 		this.daochambre = daochambre;
+		LOG.info("dao chambre injected");
 	}
 
-	public Logger getLOG() {
-		return LOG;
-	}
 
 	@Override
 	public void addchambre(Chambre c) {

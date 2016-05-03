@@ -6,11 +6,19 @@ import gestionhotel.entities.Reservation;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public class ImplReservationMetier implements InterReservationMetier{
 	
 	private final Logger LOG=Logger.getLogger("ImplemReservationMetier");
 	private InterReservationDAO daoreservation;
+	
+	//setters 
+	public void setDaoreservation(InterReservationDAO daoreservation) {
+		this.daoreservation = daoreservation;
+		LOG.info("dao reservation injected");
+	}
 
 	@Override
 	public void addreservation(Reservation r, Long idClient, Long idEmploye,
