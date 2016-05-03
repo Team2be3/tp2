@@ -6,7 +6,9 @@ import gestionhotel.entities.Employe;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public class ImplemEmployeMetier implements InterEmployeMetier {
 	
 	private final Logger LOG=Logger.getLogger("ImplemClientMetier");

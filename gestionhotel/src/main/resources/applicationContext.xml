@@ -19,7 +19,7 @@
 	<bean id="metierChambre" class="gestionhotel.Metier.ImplChambreMetier">
 		<property name="daochambre" ref="daochambre"></property>
 	</bean>
-	<bean id="daoresarvation" class="gestionhotel.DAO.ImplReservationDao"></bean>
+	<bean id="daoreservation" class="gestionhotel.DAO.ImplReservationDao"></bean>
 	<bean id="metierReservation" class="gestionhotel.Metier.ImplReservationMetier">
 		<property name="daoreservation" ref="daoreservation"></property>
 	</bean>
@@ -53,7 +53,7 @@
     </bean>
     <bean id="EntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
     <property name="persistenceUnitManager" ref="persistenceUnitManager"></property>
-    <property name="persistenceUnitName" value="UP_gestionhotel"></property>
+    <property name="persistenceUnitName" value="UP_hotel"></property>
     </bean>
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
     <property name="entityManagerFactory" ref="EntityManagerFactory"></property>
