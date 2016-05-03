@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -40,12 +41,15 @@ public class Devis implements Serializable {
 	///////////////////
 	/////association///
 	///////////////////
+
 	@OneToOne
 	@PrimaryKeyJoinColumn
-	private Facture facture;
+	private Reservation reservation;
 	
-	/*@OneToMany(fetch=FetchType.LAZY, mappedBy="produit")
-	private List<Produit> listeProduit = new ArrayList<Produit>();*/
+	
+	@OneToMany(fetch=FetchType.LAZY)
+	@JoinColumn(name="IdDevis")
+	private List<Produit> listeProduit = new ArrayList<Produit>();
 	
 	/* Produit, Reservation, Facture*/
 	
@@ -63,13 +67,28 @@ public class Devis implements Serializable {
 	}
 
 
+	public Reservation getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(Reservation reservation) {
+		this.reservation = reservation;
+	}
+
+	public List<Produit> getListeProduit() {
+		return listeProduit;
+	}
+
+	public void setListeProduit(List<Produit> listeProduit) {
+		this.listeProduit = listeProduit;
+	}
+
+
 	
 	///////////////////////
 	/////constructeurs/////
 	///////////////////////
 	
-
-
 	public Devis() {
 		super();
 		// TODO Auto-generated constructor stub

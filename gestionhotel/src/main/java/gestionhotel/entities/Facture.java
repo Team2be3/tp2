@@ -3,11 +3,13 @@ package gestionhotel.entities;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.jws.Oneway;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
@@ -45,6 +47,9 @@ public class Facture implements Serializable{
 ///////////////////
 /////association///
 ///////////////////
+	@OneToOne
+	@PrimaryKeyJoinColumn
+	private Devis devis;
 
 /////////////////////////
 /////getters&setters/////
@@ -69,7 +74,14 @@ public class Facture implements Serializable{
 	public void setTypePaiement(String typePaiement) {
 		this.typePaiement = typePaiement;
 	}
+	
 
+public Devis getDevis() {
+		return devis;
+	}
+	public void setDevis(Devis devis) {
+		this.devis = devis;
+	}
 ///////////////////////
 /////constructeurs/////
 ///////////////////////

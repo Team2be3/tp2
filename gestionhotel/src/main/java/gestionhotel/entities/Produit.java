@@ -35,12 +35,6 @@ public class Produit implements Serializable {
 	private String nomProduit;
 	private double prixProduit;
 	private String descriptionProduit;
-	///////////////////
-	/////association///
-	///////////////////
-	@ManyToOne
-	@JoinColumn(name = "id_Devis")
-	private Devis devis;
 	
 	/////////////////////////
 	/////getters&setters/////
@@ -64,17 +58,16 @@ public class Produit implements Serializable {
 		this.prixProduit = prixProduit;
 		
 	}	
-		///////////////////////
-		/////constructeurs/////
-		///////////////////////
-		
-
 	public String getDescriptionProduit() {
 		return descriptionProduit;
 	}
 	public void setDescriptionProduit(String descriptionProduit) {
 		this.descriptionProduit = descriptionProduit;
 	}
+		///////////////////////
+		/////constructeurs/////
+		///////////////////////
+		
 	public Produit() {
 		super();
 		// TODO Auto-generated constructor stub
