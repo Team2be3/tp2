@@ -3,6 +3,7 @@ package gestionhotel.Metier;
 import gestionhotel.entities.Chambre;
 import gestionhotel.entities.Reservation;
 
+import java.util.Date;
 import java.util.List;
 
 public interface InterChambreMetier {
@@ -13,6 +14,8 @@ public interface InterChambreMetier {
 	public Chambre getChambre(Long idChambre);
 	public List<Chambre> getlistechambres();
 	public List<Reservation> getlistereservchambre(Long idChambre);
+	
+	public List<Chambre> dispochambre(Date datedebut, Date datefin);
 	
 
 }

@@ -4,9 +4,12 @@ import gestionhotel.DAO.InterChambreDao;
 import gestionhotel.entities.Chambre;
 import gestionhotel.entities.Reservation;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
@@ -64,6 +67,27 @@ public class ImplChambreMetier implements InterChambreMetier{
 	public List<Reservation> getlistereservchambre(Long idChambre) {
 		// TODO Auto-generated method stub
 		return daochambre.getlistereservchambre(idChambre);
+	}
+
+
+	@Override
+	public List<Chambre> dispochambre(Date datedebut, Date datefin) {
+		// TODO Auto-generated method stub
+		List<Chambre> chambres = new ArrayList<Chambre>();
+		for(Chambre c:daochambre.getlistechambres()){
+			Boolean b=true;
+			for(Reservation r:c.getListereservation()){
+				long d1=r.getDateDebut().getTime();
+				long d2=r.getDateFin().getTime();
+				long dd=datedebut.getTime();
+				long df=datefin.getTime();
+				if((d1<df & df<d2)||(d1<dd & dd<d2)){
+					b=false;
+					}
+			}
+			if(b){chambres.add(c);}
+		}
+		return chambres;
 	}
 
 }
