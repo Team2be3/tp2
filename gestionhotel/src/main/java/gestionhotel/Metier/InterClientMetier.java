@@ -4,6 +4,7 @@ import gestionhotel.entities.Client;
 
 import java.util.List;
 
+
 public interface InterClientMetier {
 	
 	public void addClient(Client c);

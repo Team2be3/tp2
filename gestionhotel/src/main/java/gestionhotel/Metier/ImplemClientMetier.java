@@ -16,7 +16,7 @@ public class ImplemClientMetier implements InterClientMetier {
 	
 	
 	
-	//setters
+	//setters  
 	public void setDaoClient(InterClientDao daoClient) {
 		this.daoClient = daoClient;
 		LOG.info("dao client injected");
