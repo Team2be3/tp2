@@ -49,13 +49,15 @@ public class ImplemEmployeDao implements InterEmployeDao {
 
 	@Override
 	public List<Employe> getListEmploye() {
-		Query req= (Query) em.createQuery("from Employe");
+		Query req= (Query) em.createQuery("from Personne p where p.class = :y");
+		req.setParameter("y", "Employe");
 		return req.getResultList();
 	}
 
 	@Override
 	public List<Employe> getListEmpMc(String mc) {
-		Query req= (Query) em.createQuery("from Employe e where e.nomPersonne = :x");
+		Query req= (Query) em.createQuery("from Personne p where p.nomPersonne like :x and p.class = :y");
+		req.setParameter("y", "Employe");
 		req.setParameter("x", "%"+mc+"%");
 		return req.getResultList();
 	}

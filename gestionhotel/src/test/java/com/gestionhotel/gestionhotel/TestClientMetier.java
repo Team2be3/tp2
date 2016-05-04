@@ -39,13 +39,13 @@ public class TestClientMetier {
 		assertNotNull(c.getIdPersonne());
 	}
 
-	@Test
+	/*@Test
 	public void testDeleteClient() {
-		List<Client> tab1=metierClient.getListClient();//2
+		List<Client> tab1=metierClient.getListClient();
 		metierClient.deleteClient(1L);
-		List<Client> tab2= metierClient.getListClient();//1
+		List<Client> tab2= metierClient.getListClient();
 		assertTrue(tab1.size()-1==tab2.size());
-	}
+	}*/
 
 	@Test
 	public void testUpdateClient() {
