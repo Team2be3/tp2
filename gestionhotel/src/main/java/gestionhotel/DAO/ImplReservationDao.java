@@ -69,4 +69,12 @@ public class ImplReservationDao implements InterReservationDAO{
 		return query.getResultList();
 	}
 
+	@Override
+	public void addChamToReser(Long idReservation, Long idChambre) {
+		Reservation r=em.find(Reservation.class, idReservation);
+		Chambre c=em.find(Chambre.class, idChambre);
+		r.getListechambre().add(c);
+		c.getListereservation().add(r);
+	}
+
 }

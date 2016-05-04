@@ -54,4 +54,9 @@ public class ImplReservationMetier implements InterReservationMetier{
 		return daoreservation.getlistereservations();
 	}
 
+	@Override
+	public void addChamToReser(Long idReservation, Long idChambre) {
+		daoreservation.addChamToReser(idReservation, idChambre);
+	}
+
 }
