@@ -17,6 +17,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 /*Auteur: Valérian THOMAS
  * nom: gestionhotel
@@ -38,22 +41,25 @@ public class Reservation implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idReservation;
 	@Temporal(TemporalType.DATE)
+	//@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dateDebut;
 	@Temporal(TemporalType.DATE)
+	//@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dateFin;
 	@Column(name="Etat_Reservation")
+	@NotEmpty
 	private String etatReservation;
 	
 	
 	//association 
-	@ManyToMany(fetch=FetchType.LAZY, mappedBy="listereservation")
+	@ManyToMany(/*fetch=FetchType.LAZY,*/ mappedBy="listereservation")
 	private List<Chambre> listechambre=new ArrayList<Chambre>();
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne//(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_client")
 	private Client client;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne//(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_employe")
 	private Employe employe;
 	

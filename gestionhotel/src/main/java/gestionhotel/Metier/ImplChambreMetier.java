@@ -81,7 +81,7 @@ public class ImplChambreMetier implements InterChambreMetier{
 				long d2=r.getDateFin().getTime();
 				long dd=datedebut.getTime();
 				long df=datefin.getTime();
-				if((d1<df & df<d2)||(d1<dd & dd<d2)){
+				if((d1<=df & df<=d2)||(d1<=dd & dd<=d2)){
 					b=false;
 					}
 			}

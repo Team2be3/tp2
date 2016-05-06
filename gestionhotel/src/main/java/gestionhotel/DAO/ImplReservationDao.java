@@ -26,23 +26,22 @@ public class ImplReservationDao implements InterReservationDAO{
 	private EntityManager em;
 
 	@Override
-	public void addreservation(Reservation r, Long idClient, Long idEmploye,
-			Long idChambre) {
+	public void addreservation(Reservation r, Long idClient, Long idEmploye) throws Exception {
 		// TODO Auto-generated method stub
+		if(r.getDateFin().getTime()<r.getDateDebut().getTime())throw new Exception("La date de fin doit être plus grande ou égale que la date de debut");
 		Client c = em.find(Client.class, idClient);
 		Employe e = em.find(Employe.class, idEmploye);
-		Chambre ch = em.find(Chambre.class, idChambre);
 		r.setClient(c);
 		r.setEmploye(e);
-		r.getListechambre().add(ch);
-		em.persist(r);		
-		
+		em.persist(r);
 	}
 
 	@Override
 	public void deletereservation(Long idReservation) {
-		// TODO Auto-generated method stub
 		Reservation r = em.find(Reservation.class, idReservation);
+		for (Chambre ch : r.getListechambre()) {
+			ch.getListereservation().remove(r);
+		}
 		em.remove(r);
 		
 	}
@@ -75,6 +74,21 @@ public class ImplReservationDao implements InterReservationDAO{
 		Chambre c=em.find(Chambre.class, idChambre);
 		r.getListechambre().add(c);
 		c.getListereservation().add(r);
+	}
+
+	@Override
+	public List<Chambre> getlistechares(Long idReservation) {
+		Query query = em.createQuery("select r.listechambre from Reservation r where r.idReservation= :x");
+		query.setParameter("x", idReservation);
+		return query.getResultList();
+	}
+
+	@Override
+	public void deleteChamToReser(Long idReservation, Long idChambre) {
+		Reservation r=em.find(Reservation.class, idReservation);
+		Chambre c=em.find(Chambre.class, idChambre);
+		r.getListechambre().remove(c);
+		c.getListereservation().remove(r);
 	}
 
 }

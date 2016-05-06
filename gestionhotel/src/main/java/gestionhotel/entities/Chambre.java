@@ -12,6 +12,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 /*Auteur: Valérian THOMAS
  * nom: gestionhotel
@@ -31,15 +34,18 @@ public class Chambre implements Serializable{
 	@Id
 	private Long idChambre;
 	@Column
+	@NotNull
 	private Integer capacite;
 	@Column
+	@NotNull
 	private Double prix;
 	@Column
+	@NotEmpty
 	private String description;
 	
 	//association avec Reservation
 	
-	@ManyToMany (fetch=FetchType.LAZY)
+	@ManyToMany //(fetch=FetchType.LAZY)
 	@JoinTable(name="Chambre_res")
 	private List<Reservation> listereservation = new ArrayList<Reservation>();
 

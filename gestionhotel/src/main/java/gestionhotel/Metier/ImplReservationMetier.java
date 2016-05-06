@@ -1,6 +1,7 @@
 package gestionhotel.Metier; 
 
 import gestionhotel.DAO.InterReservationDAO;
+import gestionhotel.entities.Chambre;
 import gestionhotel.entities.Reservation;
 
 import java.util.List;
@@ -21,10 +22,9 @@ public class ImplReservationMetier implements InterReservationMetier{
 	}
 
 	@Override
-	public void addreservation(Reservation r, Long idClient, Long idEmploye,
-			Long idChambre) {
+	public void addreservation(Reservation r, Long idClient, Long idEmploye) throws Exception {
 		// TODO Auto-generated method stub
-		daoreservation.addreservation(r, idClient, idEmploye, idChambre);
+		daoreservation.addreservation(r, idClient, idEmploye);
 		
 	}
 
@@ -57,6 +57,17 @@ public class ImplReservationMetier implements InterReservationMetier{
 	@Override
 	public void addChamToReser(Long idReservation, Long idChambre) {
 		daoreservation.addChamToReser(idReservation, idChambre);
+	}
+
+	@Override
+	public List<Chambre> getlistechares(Long idReservation) {
+		// TODO Auto-generated method stub
+		return daoreservation.getlistechares(idReservation);
+	}
+
+	@Override
+	public void deleteChamToReser(Long idReservation, Long idChambre) {
+		daoreservation.deleteChamToReser(idReservation, idChambre);		
 	}
 
 }

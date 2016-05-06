@@ -36,9 +36,9 @@ public class Testreservation {
 
 	
 	@Test
-	public void testAddreservation() {
+	public void testAddreservation() throws Exception {
 		Reservation r = new Reservation(new Date(), new Date(), "Payé");
-		metierReservation.addreservation(r, 1L, 2L, 6L);
+		metierReservation.addreservation(r, 1L, 2L);
 		assertNotNull(r.getIdReservation());
 		
 		
