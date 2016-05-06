@@ -68,14 +68,14 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2">Date de debut</label>
 				<div class="col-sm-10">
-					<f:input path="dateDebut" value="yyyy-MM-dd"/>
+					<f:input type="date"  path="dateDebut" />
 					<f:errors cssClass="erreur" path="dateDebut"></f:errors>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Date de fin</label>
 				<div class="col-sm-10">
-					<f:input path="dateFin" value="yyyy-MM-dd"/>
+					<f:input type="date" path="dateFin"/>
 					<f:errors cssClass="erreur" path="dateFin"></f:errors>
 				</div>
 			</div>
