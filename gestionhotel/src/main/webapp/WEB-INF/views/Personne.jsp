@@ -104,14 +104,13 @@ association : ControllerPersonne -->
 
 
 				 	<h2>Rechercher par mot-clé</h2>
-		<%--<f:form class="form-horizontal" action="rechercherclient" method="post" modelAttribute="motcle">
+		<form class="form-horizontal" action="rechercherclient/" method="post">
 			<label for="mc">Mot Clé</label>
-			<f:input class="form-control" id="mc" path="mc" type="text" placeholder="mot-clé" /><f:errors
-										cssClass="erreur" path="mc"></f:errors>
+			<input class="form-control" id="mc" name="mc" type="text" placeholder="mot-clé" />
 
 			<button type="submit" class="btn btn-success">Rechercher</button>
-		</f:form>
-		</br> --%>
+		</form>
+		</br>
 
 
 					<!-- Liste des clients -->

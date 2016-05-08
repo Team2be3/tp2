@@ -68,12 +68,9 @@ public class ControllerPersonne {
 	
 	//Recherche d'un client par mot-clé
 	@RequestMapping(value="/rechercherclient")
-	public String rechercherClient (Model model, @ModelAttribute("motcle") @Valid String mc, BindingResult resultat){
-		if (resultat.hasErrors()){
-			return "Personne";
-		}
+	public String rechercherClient (Model model, String mc){
 		model.addAttribute("Clients", metier.getListCliMc(mc));
-		return "redirect:/Personne";
+		return "Personne";
 		}
 	
 	
