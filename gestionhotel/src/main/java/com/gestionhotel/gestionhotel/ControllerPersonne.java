@@ -70,6 +70,7 @@ public class ControllerPersonne {
 	@RequestMapping(value="/rechercherclient")
 	public String rechercherClient (Model model, String mc){
 		model.addAttribute("Clients", metier.getListCliMc(mc));
+		model.addAttribute("Client",new Client());
 		return "Personne";
 		}
 	

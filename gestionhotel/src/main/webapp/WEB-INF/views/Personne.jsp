@@ -100,17 +100,15 @@ association : ControllerPersonne -->
 							</tr>
 						</table>
 					</f:form>
-					</br>
 
 
 				 	<h2>Rechercher par mot-clé</h2>
-		<form class="form-horizontal" action="/rechercherclient" method="post">
+		<form class="form-horizontal" action="rechercherclient" method="post">
 			<label for="mc">Mot Clé</label>
 			<input class="form-control" id="mc" name="mc" type="text" placeholder="mot-clé" />
 
 			<button type="submit" class="btn btn-success">Rechercher</button>
 		</form>
-		</br>
 
 
 					<!-- Liste des clients -->
