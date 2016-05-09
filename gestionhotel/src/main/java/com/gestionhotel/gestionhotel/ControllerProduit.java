@@ -8,16 +8,11 @@ package com.gestionhotel.gestionhotel;
 
  * */
 
-import gestionhotel.Metier.InterChambreMetier;
-import gestionhotel.Metier.InterClientMetier;
-import gestionhotel.Metier.InterEmployeMetier;
+
 import gestionhotel.Metier.InterMetierProduit;
-import gestionhotel.Metier.InterReservationMetier;
-import gestionhotel.entities.Chambre;
-import gestionhotel.entities.Client;
-import gestionhotel.entities.ExceptionHotel;
 import gestionhotel.entities.Produit;
-import gestionhotel.entities.Reservation;
+
+
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -26,6 +21,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -34,6 +30,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+@Controller
 public class ControllerProduit {
 
 	@Autowired
@@ -47,12 +44,21 @@ public class ControllerProduit {
 	    dateFormat.setLenient(false);
 	    binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
 	}
+	
+	//Page du produit
+		@RequestMapping(value="/produit")
+		public String indexProduit(Model model){
+			model.addAttribute("produits", metierProduit.selectProduit());
+			model.addAttribute("produit", new Produit());
+			
+			return "Produit";
+		}
 
 	//Ajout d'un Produit
 	@RequestMapping(value="/ajouterProduit")
 	public String ajouterProduit(Model model,@ModelAttribute("produit") @Valid Produit pro,BindingResult resultat){
 		
-		model.addAttribute("produit", metierProduit.selectProduit());
+		model.addAttribute("produits", metierProduit.selectProduit());
 		if(resultat.hasErrors()){
 			return "Produit";
 		}
@@ -65,6 +71,7 @@ public class ControllerProduit {
 	public String modifierProduit(Model model,@PathVariable Long idProduit){
 
 		model.addAttribute("produitM", metierProduit.getProduit(idProduit));
+		model.addAttribute("produit", new Produit());
 		return "ProduitUpdate";
 	}
 	
@@ -85,19 +92,13 @@ public class ControllerProduit {
 		return "redirect:/produit";
 	}
 	
-	//Renvoie du produit grace à l'identifiant
-	@RequestMapping(value="/produit/get/{idProduit}")
-	public String recupProduit(Model model,@PathVariable Long idProduit){
-		metierProduit.getProduit(idProduit);
-		return "redirect:/produit";
-	}
 	
 	
 	//Recherche d'un produit par mot-clé
 	@RequestMapping(value="/rechercherProduit")
 	public String rechercherProduit (Model model, String motCle){
-		model.addAttribute("Produit", metierProduit.selectProduitParMc(motCle));
-		model.addAttribute("Produit",new Produit());
+		model.addAttribute("produits", metierProduit.selectProduitParMc(motCle));
+		model.addAttribute("produit",new Produit());
 		return "Produit";
 		}
 	

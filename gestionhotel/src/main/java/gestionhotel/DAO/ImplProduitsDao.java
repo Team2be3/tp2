@@ -57,7 +57,7 @@ public class ImplProduitsDao implements InterfProduitDao {
 	@Override
 	public List<Produit> selectProduitParMc(String mc) {
 
-		Query req= (Query) em.createQuery("from Produit p where p.nomProduit = :x");
+		Query req= (Query) em.createQuery("from Produit p where p.nomProduit like :x");
 		req.setParameter("x", "%"+mc+"%");
 		return req.getResultList();
 	}

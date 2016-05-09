@@ -55,6 +55,8 @@ public class ControllerJ {
 	//Pour les chambres//
 	/////////////////////
 	
+	
+	
 	//A enlever
 	@RequestMapping(value="/")
 	public String indexChambreI(Model model){

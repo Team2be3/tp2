@@ -19,10 +19,10 @@
 				<ul class="nav navbar-nav">
 					<li><a href="">Accueil</a></li>
 					<li><a href="">Personne</a></li>
-					<li class="active"><a href="chambre">Chambre<span
-							class="sr-only">(current)</span></a></li>
+					<li><a href="chambre">Chambre</a></li>
 					<li><a href="reservation">Reservation</a></li>
-					<li><a href="produit">Produit</a></li>
+					<li class="active"><a href="produit">Produit<span
+							class="sr-only">(current)</span></a></li>
 					<li><a href="devis">Devis</a></li>
 				</ul>
 			</div>
@@ -44,7 +44,7 @@
 				<td></td>
 				<td></td>
 			</tr>
-			<c:forEach items="${produit}" var="pro">
+			<c:forEach items="${produits}" var="pro">
 				<tr>
 					<td>${pro.idProduit}</td>
 					<td>${pro.nomProduit}</td>
@@ -79,31 +79,24 @@
 		<f:form class="form-horizontal" action="ajouterProduit" method="post"
 			modelAttribute="produit">
 			<div class="form-group">
-				<label class="control-label col-sm-2">Numero Produit</label>
-				<div class="col-sm-10">
-					<f:input type="text" path="idProduit" />
-					<f:errors cssClass="erreur" path="idProduit"></f:errors>
-				</div>
-			</div>
-			<div class="form-group">
 				<label class="control-label col-sm-2">Nom Produit</label>
 				<div class="col-sm-10">
-					<f:input type="text" path="idProduit" />
-					<f:errors cssClass="erreur" path="idProduit"></f:errors>
+					<f:input type="text" path="nomProduit" />
+					<f:errors cssClass="erreur" path="nomProduit"></f:errors>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Prix Produit</label>
 				<div class="col-sm-10">
-					<f:input type="text" path="prix" />
-					<f:errors cssClass="erreur" path="prix"></f:errors>
+					<f:input type="text" path="prixProduit" />
+					<f:errors cssClass="erreur" path="prixProduit"></f:errors>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Description Produit</label>
 				<div class="col-sm-10">
-					<f:input type="text" path="description" />
-					<f:errors cssClass="erreur" path="description"></f:errors>
+					<f:input type="text" path="descriptionProduit" />
+					<f:errors cssClass="erreur" path="descriptionProduit"></f:errors>
 				</div>
 			</div>
 			<div class="form-group">
@@ -115,44 +108,6 @@
 	</div>
 	
 	
-		<div class="panel panel-default">
-		<div class="panel-heading"><h3>Supprimer un produit</h3></div>
-		<f:form class="form-horizontal" action="supprimerProduit" method="delete"
-			modelAttribute="produit">
-			<div class="form-group">
-				<label class="control-label col-sm-2">Numero Produit</label>
-				<div class="col-sm-10">
-					<f:input type="text" path="idProduit" />
-					<f:errors cssClass="erreur" path="idProduit"></f:errors>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-primary">Supprimer</button>
-				</div>
-			</div>
-		</f:form>
-	</div>
-	
-		
-		<div class="panel panel-default">
-		<div class="panel-heading"><h3>Supprimer un produit</h3></div>
-		<f:form class="form-horizontal" action="recupProduit" method="get"
-			modelAttribute="produit">
-			<div class="form-group">
-				<label class="control-label col-sm-2">Numero Produit</label>
-				<div class="col-sm-10">
-					<f:input type="text" path="idProduit" />
-					<f:errors cssClass="erreur" path="idProduit"></f:errors>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-primary">Renvoie</button>
-				</div>
-			</div>
-		</f:form>
-	</div>
 	
 	<div>
 		<h2>Rechercher un produit par mot-clé</h2>

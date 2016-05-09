@@ -22,8 +22,8 @@
 					<li class="active"><a href="chambre">Chambre<span
 							class="sr-only">(current)</span></a></li>
 					<li><a href="reservation">Reservation</a></li>
-					<li><a href="">Produit</a></li>
-					<li><a href="">Devis</a></li>
+					<li><a href="produit">Produit</a></li>
+					<li><a href="devis">Devis</a></li>
 				</ul>
 			</div>
 		</div>
