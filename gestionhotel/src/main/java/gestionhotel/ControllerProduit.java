@@ -1,4 +1,4 @@
-package com.gestionhotel.gestionhotel;
+package gestionhotel;
 
 /*Auteur(s):Shéhérazade
  *Nom projet:GestionHotel

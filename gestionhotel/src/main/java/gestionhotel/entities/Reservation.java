@@ -20,6 +20,8 @@ import javax.persistence.TemporalType;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /*Auteur: Valérian THOMAS
  * nom: gestionhotel
@@ -90,19 +92,21 @@ public class Reservation implements Serializable {
 		this.etatReservation = etatReservation;
 	}
 
-	
+	@JsonIgnore
 	public List<Chambre> getListechambre() {
 		return listechambre;
 	}
 	public void setListechambre(List<Chambre> listechambre) {
 		this.listechambre = listechambre;
 	}
+	@JsonIgnore
 	public Client getClient() {
 		return client;
 	}
 	public void setClient(Client client) {
 		this.client = client;
 	}
+	@JsonIgnore
 	public Employe getEmploye() {
 		return employe;
 	}

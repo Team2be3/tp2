@@ -1,4 +1,4 @@
-package com.gestionhotel.gestionhotel;
+package gestionhotel;
 
 import gestionhotel.Metier.InterChambreMetier;
 import gestionhotel.Metier.InterClientMetier;

@@ -1,4 +1,4 @@
-package com.gestionhotel.gestionhotel;
+package gestionhotel;
 
 /*Auteur:Dubuc Jérémy
  *nom Projet:gestionhotel

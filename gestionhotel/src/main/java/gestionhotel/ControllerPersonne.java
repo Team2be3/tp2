@@ -1,4 +1,4 @@
-package com.gestionhotel.gestionhotel;
+package gestionhotel;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
