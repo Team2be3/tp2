@@ -21,6 +21,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 
 /*Auteur: Valérian THOMAS
@@ -96,6 +97,7 @@ public class Reservation implements Serializable {
 	public List<Chambre> getListechambre() {
 		return listechambre;
 	}
+	@JsonSetter
 	public void setListechambre(List<Chambre> listechambre) {
 		this.listechambre = listechambre;
 	}
@@ -103,6 +105,7 @@ public class Reservation implements Serializable {
 	public Client getClient() {
 		return client;
 	}
+	@JsonSetter
 	public void setClient(Client client) {
 		this.client = client;
 	}
@@ -110,6 +113,7 @@ public class Reservation implements Serializable {
 	public Employe getEmploye() {
 		return employe;
 	}
+	@JsonSetter
 	public void setEmploye(Employe employe) {
 		this.employe = employe;
 	}

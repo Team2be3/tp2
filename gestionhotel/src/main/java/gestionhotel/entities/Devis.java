@@ -16,6 +16,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 
 /*Auteur(s):Shéhérazade
@@ -81,7 +82,7 @@ public class Devis implements Serializable {
 	public List<Produit> getListeProduit() {
 		return listeProduit;
 	}
-
+	@JsonSetter
 	public void setListeProduit(List<Produit> listeProduit) {
 		this.listeProduit = listeProduit;
 	}

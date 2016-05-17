@@ -59,12 +59,12 @@ public class ReservationRest {
 		return metierReservation.getlistechares(idReservation);
 	}
 	
-	@RequestMapping(value="/reser/addchambre/{idReservation}/{idChambre}",method=RequestMethod.PUT)
+	@RequestMapping(value="/reser/addchambre/{idReservation}/{idChambre}",method=RequestMethod.GET)
 	public void addChamToReser(@PathVariable Long idReservation,@PathVariable Long idChambre){
 		metierReservation.addChamToReser(idReservation, idChambre);
 	}
 	
-	@RequestMapping(value="/reser/deletechambre/{idReservation}/{idChambre}",method=RequestMethod.PUT)
+	@RequestMapping(value="/reser/deletechambre/{idReservation}/{idChambre}",method=RequestMethod.GET)
 	public void deleteChamToReser(@PathVariable Long idReservation,@PathVariable Long idChambre){
 		metierReservation.deleteChamToReser(idReservation, idChambre);
 	}

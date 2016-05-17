@@ -20,6 +20,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 
 @Entity
@@ -35,7 +36,7 @@ public class Employe extends Personne implements Serializable{
 	public List<Reservation> getReservations() {
 		return reservations;
 	}
-
+	@JsonSetter
 	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
 	}

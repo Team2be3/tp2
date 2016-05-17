@@ -14,6 +14,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 
 /*Auteur(s):Shéhérazade
@@ -81,6 +82,7 @@ public class Facture implements Serializable{
 public Devis getDevis() {
 		return devis;
 	}
+	@JsonSetter
 	public void setDevis(Devis devis) {
 		this.devis = devis;
 	}
