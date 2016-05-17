@@ -74,7 +74,7 @@ public class Devis implements Serializable {
 	public Reservation getReservation() {
 		return reservation;
 	}
-
+	@JsonSetter
 	public void setReservation(Reservation reservation) {
 		this.reservation = reservation;
 	}

@@ -75,7 +75,7 @@ public class ControllerProduit {
 		return "ProduitUpdate";
 	}
 	
-	//Modification de la produit
+	//Modification du produit
 	@RequestMapping(value="/produit/modifierProduit")
 	public String modifierProduit2(Model model,@ModelAttribute("produitM") @Valid Produit pro,BindingResult resultat){
 		if(resultat.hasErrors()){
