@@ -20,6 +20,8 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @DiscriminatorValue("Client")
@@ -31,6 +33,7 @@ public class Client extends Personne implements Serializable{
 
 	
 	/* getEtSet */
+	@JsonIgnore
 	public List<Reservation> getReservations() {
 		return reservations;
 	}

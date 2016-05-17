@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /*Auteur(s):Shéhérazade
  *Nom projet:GestionHotel
@@ -67,7 +69,7 @@ public class Devis implements Serializable {
 		this.idDevis = idDevis;
 	}
 
-
+	@JsonIgnore
 	public Reservation getReservation() {
 		return reservation;
 	}
@@ -75,7 +77,7 @@ public class Devis implements Serializable {
 	public void setReservation(Reservation reservation) {
 		this.reservation = reservation;
 	}
-
+	@JsonIgnore
 	public List<Produit> getListeProduit() {
 		return listeProduit;
 	}

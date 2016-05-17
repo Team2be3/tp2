@@ -16,6 +16,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /*Auteur: Valérian THOMAS
  * nom: gestionhotel
  *date: 02/05/2016
@@ -75,6 +77,7 @@ public class Chambre implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	@JsonIgnore
 	public List<Reservation> getListereservation() {
 		return listereservation;
 	}

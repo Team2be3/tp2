@@ -19,6 +19,8 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @DiscriminatorValue("Employe")
@@ -29,6 +31,7 @@ public class Employe extends Personne implements Serializable{
 	private List<Reservation> reservations= new ArrayList<Reservation>();
 
 	/* getEtSet */
+	@JsonIgnore
 	public List<Reservation> getReservations() {
 		return reservations;
 	}

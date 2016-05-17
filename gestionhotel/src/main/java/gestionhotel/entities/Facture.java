@@ -13,6 +13,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /*Auteur(s):Shéhérazade
  *Nom projet:GestionHotel
@@ -75,7 +77,7 @@ public class Facture implements Serializable{
 		this.typePaiement = typePaiement;
 	}
 	
-
+	@JsonIgnore
 public Devis getDevis() {
 		return devis;
 	}
